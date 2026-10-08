@@ -134,7 +134,7 @@ body {
 }
 
 .app-card:hover {
-    background: #e5ecd6;
+    /* background: #e5ecd6; */
 }
 
 .app-header {
@@ -212,9 +212,13 @@ body {
     transition: background 0.2s, color 0.2s;
 }
 
-.app-card:hover .btn-view {
-    background: transparent;
-    color: var(--primary-color);
+.app-card:hover {
+    background: #e5ecd6;
+}
+
+.btn-view:hover {
+    background: var(--primary-hover);
+    /* color: var(--primary-color); */
     border: 1px solid var(--primary-color);
 }
 
