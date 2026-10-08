@@ -2,11 +2,11 @@
   "schema": "v1",
   "id": "debt-untangle",
   "name": "Debt Untangle",
-  "version": "1.0.1",
+  "version": "1.0.6",
   "description": "Keep track of shared expenses and debts.",
   "category": "Finance",
   "repository": "https://github.com/zyrridian/debt-untangle",
-  "release": "https://github.com/zyrridian/debt-untangle/releases/tag/v1.0.1",
+  "release": "https://github.com/zyrridian/debt-untangle/releases/tag/v1.0.6",
   "featured": false,
   "icon": "icon.webp",
   "artifacts": [

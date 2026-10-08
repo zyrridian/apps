@@ -1,16 +1,16 @@
 {
   "schema": "v1",
-  "generatedAt": "2026-10-08T02:24:51Z",
+  "generatedAt": "2026-10-08T05:42:44+02:00",
   "apps": [
     {
       "schema": "v1",
       "id": "debt-untangle",
       "name": "Debt Untangle",
-      "version": "1.0.1",
+      "version": "1.0.6",
       "description": "Keep track of shared expenses and debts.",
       "category": "Finance",
       "repository": "https://github.com/zyrridian/debt-untangle",
-      "release": "https://github.com/zyrridian/debt-untangle/releases/tag/v1.0.1",
+      "release": "https://github.com/zyrridian/debt-untangle/releases/tag/v1.0.6",
       "featured": false,
       "icon": "./apps/debt-untangle/icon.webp",
       "artifacts": [
@@ -19,8 +19,8 @@
           "type": "apk",
           "filename": "app-release.apk",
           "url": "./apps/debt-untangle/app-release.apk",
-          "sha256": "4ea978605d0bfb655f529969df26a62aa54e9e0b5ee08c9cbb81eba5bbc14620",
-          "size": 92700179
+          "sha256": "f0ae0111891fa92ccbcd65f3facf099b0ec7933688d8721a661a3a7dc5bddcef",
+          "size": 92700175
         }
       ],
       "screenshots": [
