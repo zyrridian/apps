@@ -33,7 +33,7 @@ body {
     width: 100%;
     max-width: 1200px;
     border-radius: 32px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02), 0 1px 0 rgba(0, 0, 0, 0.03);
+    box-shadow: 0 12px 48px rgba(66, 161, 41, 0.08);
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -121,21 +121,20 @@ body {
 }
 
 .app-card {
-    background: #fcfcfc;
-    border: 1px solid var(--border-color);
+    background: #f7f7f7;
+    border: none; 
     border-radius: var(--radius-md);
     padding: 24px;
     text-decoration: none;
     color: inherit;
     display: flex;
     flex-direction: column;
-    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+    cursor: pointer;
+    transition: background 0.2s;
 }
 
 .app-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 24px rgba(66, 161, 41, 0.05);
-    border-color: #d1dfbb;
+    background: #e5ecd6;
 }
 
 .app-header {
@@ -201,22 +200,80 @@ body {
 
 .btn-view {
     margin-top: auto;
-    background: transparent;
-    border: 1px solid var(--border-color);
-    color: var(--text-main);
+    background: var(--primary-color);
+    border: none;
+    color: white;
     padding: 10px;
     border-radius: 20px;
     text-align: center;
     font-weight: 600;
     font-size: 14px;
-    transition: all 0.2s;
+    border: 1px solid transparent;
+    transition: background 0.2s, color 0.2s;
 }
 
 .app-card:hover .btn-view {
+    background: transparent;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+}
+
+/* App Details View additions */
+.btn-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin-bottom: 32px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.icon-circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 18px;
+    background: #f4f7ed;
+    color: var(--text-main);
+    font-size: 16px;
+    transition: background 0.2s, color 0.2s;
+}
+
+.back-text {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-muted);
+    transition: color 0.2s;
+}
+
+.btn-back:hover .icon-circle {
     background: var(--primary-color);
-    border-color: var(--primary-color);
     color: white;
 }
+
+.btn-back:hover .back-text {
+    color: var(--text-main);
+}
+
+/* Reusing these from previous modals for the app details */
+.modal-header { display: flex; align-items: center; gap: 24px; margin-bottom: 24px; margin-top: 16px; }
+.modal-header .app-icon { width: 80px; height: 80px; font-size: 32px; border-radius: 16px; }
+.modal-header h2 { font-size: 24px; font-weight: 700; margin: 0 0 4px 0; }
+
+.modal-meta-row { display: flex; gap: 16px; align-items: center; margin-bottom: 24px; flex-wrap: wrap; border-bottom: 1px solid var(--border-color); padding-bottom: 24px; }
+.btn-primary, .btn-download { background: var(--primary-color); color: white; padding: 12px 24px; border-radius: 24px; text-decoration: none; font-weight: 600; font-size: 15px; transition: background 0.2s; border: none; cursor: pointer; }
+.btn-primary:hover, .btn-download:hover { background: var(--primary-hover); }
+
+.app-version { background: #f4f7ed; padding: 8px 16px; border-radius: 12px; font-size: 13px; font-family: monospace; font-weight: 600; color: var(--text-main); }
+.modal-desc { line-height: 1.6; color: var(--text-muted); font-size: 15px; margin: 0; }
+
+.screenshots-gallery { display: flex; gap: 16px; overflow-x: auto; margin-top: 32px; padding-bottom: 16px; }
+.screenshot-img { height: 320px; border-radius: var(--radius-sm); border: 1px solid var(--border-color); box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
 
 /* Modals */
 .modal-overlay {
@@ -271,20 +328,6 @@ body {
 .close-btn:hover {
     background: #e5ecd6;
 }
-
-.modal-header { display: flex; align-items: center; gap: 24px; margin-bottom: 24px; margin-top: 16px; }
-.modal-header .app-icon { width: 80px; height: 80px; font-size: 32px; border-radius: 16px; }
-.modal-header h2 { font-size: 24px; font-weight: 700; margin: 0 0 4px 0; }
-
-.modal-meta-row { display: flex; gap: 16px; align-items: center; margin-bottom: 24px; flex-wrap: wrap; border-bottom: 1px solid var(--border-color); padding-bottom: 24px; }
-.btn-primary, .btn-download { background: var(--primary-color); color: white; padding: 12px 24px; border-radius: 24px; text-decoration: none; font-weight: 600; font-size: 15px; transition: background 0.2s; border: none; cursor: pointer; }
-.btn-primary:hover, .btn-download:hover { background: var(--primary-hover); }
-
-.app-version { background: #f4f7ed; padding: 8px 16px; border-radius: 12px; font-size: 13px; font-family: monospace; font-weight: 600; color: var(--text-main); }
-.modal-desc { line-height: 1.6; color: var(--text-muted); font-size: 15px; margin: 0; }
-
-.screenshots-gallery { display: flex; gap: 16px; overflow-x: auto; margin-top: 32px; padding-bottom: 16px; }
-.screenshot-img { height: 320px; border-radius: var(--radius-sm); border: 1px solid var(--border-color); box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
 
 /* About Modal Specific */
 .about-modal {
