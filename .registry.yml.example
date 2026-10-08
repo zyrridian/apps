@@ -1,0 +1,17 @@
+# Copy this file to .registry.yml in an upstream app repository.
+# The same metadata must be written to apps/<id>/manifest.json in the registry
+# repository by the release workflow.
+id: example-app
+name: Example App
+description: A short description of at least ten characters.
+category: Utility
+featured: false
+
+artifact:
+  path: build/app/outputs/flutter-apk/release/app-release.apk
+
+screenshots:
+  path: docs/screenshots
+
+icon:
+  path: docs/icon.png

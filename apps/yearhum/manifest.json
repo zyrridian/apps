@@ -1,0 +1,23 @@
+{
+  "schema": "v1",
+  "id": "yearhum",
+  "name": "Yearhum",
+  "version": "1.0.4",
+  "description": "Explore music, cinema, games, and cultural milestones from 1990 to 2025.",
+  "category": "Entertainment",
+  "repository": "https://github.com/zyrridian/yearhum",
+  "release": "https://github.com/zyrridian/yearhum/releases/tag/v1.0.4",
+  "featured": true,
+  "artifacts": [
+    {
+      "platform": "android",
+      "type": "apk",
+      "filename": "app-release.apk"
+    }
+  ],
+  "screenshots": [
+    "1_home.png",
+    "2_timeline.png",
+    "3_detail.png"
+  ]
+}

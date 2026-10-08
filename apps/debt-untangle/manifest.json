@@ -1,0 +1,22 @@
+{
+  "schema": "v1",
+  "id": "debt-untangle",
+  "name": "Debt Untangle",
+  "version": "1.0.1",
+  "description": "Keep track of shared expenses and debts.",
+  "category": "Finance",
+  "repository": "https://github.com/zyrridian/debt-untangle",
+  "release": "https://github.com/zyrridian/debt-untangle/releases/tag/v1.0.1",
+  "featured": true,
+  "icon": "icon.png",
+  "artifacts": [
+    {
+      "platform": "android",
+      "type": "apk",
+      "filename": "app-release.apk"
+    }
+  ],
+  "screenshots": [
+    "01.png"
+  ]
+}

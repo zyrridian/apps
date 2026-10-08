@@ -1,0 +1,43 @@
+name: Validate registry
+
+on:
+  push:
+    branches: ["main"]
+    paths:
+      - "apps/**"
+      - "registry/**"
+      - "schema/**"
+      - "scripts/**"
+      - ".github/workflows/validate.yml"
+  pull_request:
+    paths:
+      - "apps/**"
+      - "registry/**"
+      - "schema/**"
+      - "scripts/**"
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Rebuild registry and verify checksums
+        run: |
+          cp registry/apps.json /tmp/apps.json
+          node scripts/generate-registry.mjs
+          diff -u /tmp/apps.json registry/apps.json
+
+      - name: Validate CUE contract
+        uses: cue-lang/setup-cue@v1
+        with:
+          version: latest
+
+      - run: cue vet schema/v1/apps.cue registry/apps.json

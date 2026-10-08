@@ -1,0 +1,69 @@
+{
+  "schema": "v1",
+  "generatedAt": "2026-10-08T00:00:00Z",
+  "apps": [
+    {
+      "schema": "v1",
+      "id": "debt-untangle",
+      "name": "Debt Untangle",
+      "version": "1.0.1",
+      "description": "Keep track of shared expenses and debts.",
+      "category": "Finance",
+      "repository": "https://github.com/zyrridian/debt-untangle",
+      "release": "https://github.com/zyrridian/debt-untangle/releases/tag/v1.0.1",
+      "featured": true,
+      "icon": "./apps/debt-untangle/icon.png",
+      "artifacts": [
+        {
+          "platform": "android",
+          "type": "apk",
+          "filename": "app-release.apk",
+          "url": "./apps/debt-untangle/app-release.apk",
+          "sha256": "4ea978605d0bfb655f529969df26a62aa54e9e0b5ee08c9cbb81eba5bbc14620",
+          "size": 92700179
+        }
+      ],
+      "screenshots": [
+        {
+          "filename": "01.png",
+          "url": "./apps/debt-untangle/screenshots/01.png"
+        }
+      ]
+    },
+    {
+      "schema": "v1",
+      "id": "yearhum",
+      "name": "Yearhum",
+      "version": "1.0.4",
+      "description": "Explore music, cinema, games, and cultural milestones from 1990 to 2025.",
+      "category": "Entertainment",
+      "repository": "https://github.com/zyrridian/yearhum",
+      "release": "https://github.com/zyrridian/yearhum/releases/tag/v1.0.4",
+      "featured": true,
+      "artifacts": [
+        {
+          "platform": "android",
+          "type": "apk",
+          "filename": "app-release.apk",
+          "url": "./apps/yearhum/app-release.apk",
+          "sha256": "eb600520cc605a8d6ae52add2765dafcdb9356c31e63368ae7a1a5f988d65467",
+          "size": 3812365
+        }
+      ],
+      "screenshots": [
+        {
+          "filename": "1_home.png",
+          "url": "./apps/yearhum/screenshots/1_home.png"
+        },
+        {
+          "filename": "2_timeline.png",
+          "url": "./apps/yearhum/screenshots/2_timeline.png"
+        },
+        {
+          "filename": "3_detail.png",
+          "url": "./apps/yearhum/screenshots/3_detail.png"
+        }
+      ]
+    }
+  ]
+}
