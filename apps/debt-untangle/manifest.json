@@ -7,8 +7,8 @@
   "category": "Finance",
   "repository": "https://github.com/zyrridian/debt-untangle",
   "release": "https://github.com/zyrridian/debt-untangle/releases/tag/v1.0.1",
-  "featured": true,
-  "icon": "icon.png",
+  "featured": false,
+  "icon": "icon.webp",
   "artifacts": [
     {
       "platform": "android",
