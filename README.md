@@ -1,4 +1,4 @@
-# Zyrridian app registry
+# App registry
 
 This repository hosts the static app catalogue and the generated public
 registry at [`registry/apps.json`](registry/apps.json).
