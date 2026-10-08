@@ -30,7 +30,7 @@ async function loadApps() {
         const artifact = app.artifacts?.find(item => item.type === 'apk') ?? app.artifacts?.[0];
         const screenshots = Array.isArray(app.screenshots) ? app.screenshots : [];
         const iconHtml = app.icon
-            ? `<img src="${escapeHtml(app.icon)}" alt="" style="width:100%;height:100%;object-fit:cover;">`
+            ? `<img src="${escapeHtml(app.icon)}" alt="${escapeHtml(app.name)} icon">`
             : escapeHtml((app.name || 'App').substring(0, 2).toUpperCase());
         const appId = escapeHtml(app.id);
         const name = escapeHtml(app.name || 'Unknown App');
@@ -50,6 +50,7 @@ async function loadApps() {
                 </div>
             </div>
             <p class="app-description">${description}</p>
+            <div class="btn-view">View</div>
         `;
         main.appendChild(card);
 
@@ -83,15 +84,15 @@ async function loadApps() {
                 <div class="modal-header">
                     <div class="app-icon">${iconHtml}</div>
                     <div>
-                        <h2 class="app-title">${name}</h2>
-                        <p class="app-category">${category}</p>
+                        <h2 class="app-title" style="margin:0 0 4px 0">${name}</h2>
+                        <p class="app-category" style="margin:0; color:var(--text-muted)">${category}</p>
                     </div>
                 </div>
                 <div class="modal-meta-row">
                     ${artifact ? `<a href="${escapeHtml(artifact.url)}" class="btn-download">Download ${escapeHtml(artifact.type.toUpperCase())}</a>` : ''}
                     <span class="app-version">Version ${version}</span>
                 </div>
-                <p class="modal-desc">${description}</p>
+                <p class="modal-desc" style="line-height:1.6; color:var(--text-muted)">${description}</p>
                 ${galleryHtml}
             </div>`;
         modalsContainer.appendChild(modal);
@@ -110,69 +111,4 @@ loadApps().catch(error => {
     console.error('Error loading app registry:', error);
     document.getElementById('app-grid').innerHTML =
         '<p style="text-align: center; width: 100%; color: var(--text-muted);">The app registry is temporarily unavailable.</p>';
-});
-
-// --- Alien Magnetic Blackhole Cursor ---
-const cursor = document.createElement('div');
-cursor.className = 'blackhole-cursor';
-document.body.appendChild(cursor);
-
-const gravityWell = document.createElement('div');
-gravityWell.className = 'gravity-well';
-document.body.appendChild(gravityWell);
-
-let mouseX = window.innerWidth / 2;
-let mouseY = window.innerHeight / 2;
-let cursorX = mouseX;
-let cursorY = mouseY;
-let wellX = mouseX;
-let wellY = mouseY;
-
-document.addEventListener('mousemove', event => {
-    mouseX = event.clientX;
-    mouseY = event.clientY;
-});
-
-function animateCursor() {
-    cursorX += (mouseX - cursorX) * 0.2;
-    cursorY += (mouseY - cursorY) * 0.2;
-    wellX += (mouseX - wellX) * 0.1;
-    wellY += (mouseY - wellY) * 0.1;
-    cursor.style.transform = `translate(${cursorX}px, ${cursorY}px) translate(-50%, -50%)`;
-    gravityWell.style.transform = `translate(${wellX}px, ${wellY}px) translate(-50%, -50%)`;
-    requestAnimationFrame(animateCursor);
-}
-animateCursor();
-
-const magneticSelector = 'a, button, .app-card, .close-btn, .screenshot-link, .lightbox-close, .btn-download, .info-btn';
-
-document.addEventListener('mouseover', event => {
-    const target = event.target.closest(magneticSelector);
-    if (target) {
-        cursor.classList.add('magnetic');
-        gravityWell.classList.add('active');
-    }
-});
-
-document.addEventListener('mouseout', event => {
-    const target = event.target.closest(magneticSelector);
-    if (target) {
-        cursor.classList.remove('magnetic');
-        gravityWell.classList.remove('active');
-        target.style.transform = 'translate(0px, 0px) perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1)';
-        target.style.boxShadow = '';
-    }
-});
-
-document.addEventListener('mousemove', event => {
-    const target = event.target.closest(magneticSelector);
-    if (target) {
-        const rect = target.getBoundingClientRect();
-        const pullX = (event.clientX - (rect.left + rect.width / 2)) * 0.15;
-        const pullY = (event.clientY - (rect.top + rect.height / 2)) * 0.15;
-        const rotateX = -(event.clientY - (rect.top + rect.height / 2)) * 0.05;
-        const rotateY = (event.clientX - (rect.left + rect.width / 2)) * 0.05;
-        target.style.transform = `translate(${pullX}px, ${pullY}px) perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
-        target.style.boxShadow = `${-pullX}px ${-pullY}px 20px rgba(0,0,0,0.2)`;
-    }
 });

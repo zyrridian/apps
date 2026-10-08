@@ -1,42 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>My Apps</title>
+    <title>My Applications</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
+    <div class="app-background">
+        <div class="white-window">
+            <!-- Top Navigation -->
+            <header class="top-nav">
+                <div class="logo">
+                    <div class="logo-icon">A</div>
+                    <span>AppCatalog</span>
+                </div>
+                <nav class="nav-links">
+                    <a href="#info-modal" class="nav-btn">About</a>
+                </nav>
+            </header>
 
-    <header>
-        <h1>My Apps</h1>
-        <a href="#info-modal" class="info-btn">i</a>
-    </header>
+            <!-- Main Content -->
+            <main class="main-content">
+                <header class="page-header">
+                    <h2>My Applications</h2>
+                    <p>A collection of my personal tools and apps.</p>
+                </header>
 
-    <main id="app-grid">
-        <p style="text-align: center; width: 100%; color: var(--text-muted);">Loading apps...</p>
-    </main>
-
-    <footer>
-        &copy; 2026 Zyrridian
-    </footer>
-
-    <div id="info-modal" class="modal-overlay">
-        <div class="modal-content">
-            <a href="#" class="close-btn">X</a>
-            <h2 style="margin-top:0">About</h2>
-            <p class="modal-desc">
-                I made this because I wanted an easier alternative to dealing with 12 testers to upload simple files to
-                the Play Store.
-            </p>
+                <!-- App Grid -->
+                <div id="app-grid" class="app-grid">
+                    <p class="loading">Loading apps...</p>
+                </div>
+            </main>
         </div>
     </div>
 
+    <!-- About Modal -->
+    <div id="info-modal" class="modal-overlay">
+        <div class="modal-content about-modal">
+            <a href="#" class="close-btn">✕</a>
+            <div class="about-header">
+                <div class="logo-icon large">A</div>
+                <h2>About This Catalog</h2>
+            </div>
+            <p class="modal-desc">
+                I made this because I wanted an easier alternative to dealing with 12 testers to upload simple files to the Play Store. It serves as a direct, simple repository for my personal applications.
+            </p>
+            <a href="#" class="btn-primary" style="display:inline-block; margin-top:32px;">Got it</a>
+        </div>
+    </div>
+    
+    <!-- App Modals Container -->
     <div id="modals-container"></div>
 
     <script src="script.js"></script>
 </body>
-
 </html>
